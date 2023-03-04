@@ -5,15 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.FragmentOnAttachListener
 import androidx.navigation.fragment.findNavController
 import com.example.a2_month_lesson8.databinding.FragmentLoginBinding
-import com.example.a2_month_lesson8.databinding.FragmentMainBinding
 
 class LoginFragment : Fragment() {
 
-    companion object{
+    companion object {
         const val KEY_FOR_LOGIN = "login"
         const val KEY_FOR_PASSWORD = "password"
     }
@@ -35,7 +32,11 @@ class LoginFragment : Fragment() {
 
     private fun initListener() {
         binding.btnLogin.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainFragment(User(binding.etLogin.text.toString(), binding.etPassword.text.toString())))
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginFragmentToMainFragment(
+                    User(binding.etLogin.text.toString(), binding.etPassword.text.toString())
+                )
+            )
         }
     }
 
