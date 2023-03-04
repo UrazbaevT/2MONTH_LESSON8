@@ -1,6 +1,7 @@
 package com.example.a2_month_lesson8
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         arguments?.let {
             navArgs = MainFragmentArgs.fromBundle(it)
+            Log.e("ololo", "onViewCreated: $navArgs")
         }
 
         binding.tvLogin.text = navArgs.user.login
